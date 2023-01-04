@@ -1,0 +1,13 @@
+syntax : 
+planet  revolusi 
+
+
+
+merkurius 88.000000
+venus 225.000000
+bumi 365.000000
+mars 687.000000
+jupiter 4333.000000
+saturnus 10759.000000
+uranus 30687.000000
+neptunus 60190.000000
