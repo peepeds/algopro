@@ -1,0 +1,13 @@
+syntax : 
+planet gravitasi
+
+
+
+merkurius 3.700000
+venus 8.870000
+bumi 9.800000
+mars 3.721000
+jupiter 24.790000
+saturnus 10.440000
+uranus 8.870000
+neptunus 11.150000
