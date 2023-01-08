@@ -51,6 +51,7 @@ int main(){
             break ;
         }
     }
+    rewind(fp1);
   
    while(!feof(fp2)){
         fscanf(fp2,"%s %lf",r[0].planet,&r[0].waktu);
@@ -58,6 +59,7 @@ int main(){
             break ;
         }
    }
+   rewind(fp2);
  
     umurAsal = umur /r[0].waktu;
     masa = beratAsal /g[0].percepatan; 
@@ -76,9 +78,9 @@ int main(){
     beratTujuan = masa* g[1].percepatan; 
     umurTujuan = umurAsal * r[1].waktu  ;
 
-    printf("berikut ini adalah data perolehan apabila kamu ingin tinggal di %s\n",s1);
+    printf("\nberikut ini adalah data perolehan apabila kamu ingin tinggal di %s\n",s1);
     printf("usia mu sekarang akan berubah menjadi %lf Tahun.\n",umurTujuan);
-    printf("beratmu akan menjadi %lf Joule.\n",beratTujuan);
+    printf("beratmu akan menjadi %lf Joule\n",beratTujuan);
     fclose(fp1), fclose(fp2);
    
 
