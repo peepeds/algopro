@@ -3,21 +3,21 @@
 
 struct revolusi{
     char planet[100];
-    double waktu ;
-} r[2] ;
+    double waktu ; // waktu revolusi 
+} r[2] ;  // r[0] untuk menangkap planet awal , r[1] untuk menangkap planet tujuan 
 
 struct gravitasi{
     char planet[100];
-    double percepatan;
+    double percepatan; // percepatan gravitasi 
 } g[2] ;
 int main(){
     FILE *fp1 ; 
     FILE *fp2 ; 
-    FILE *fp ; 
+ 
     int stat1 =0, stat2=0,stats , i, p;
-    double umur , beratbadan;
-    double masa , umur1;
-    double beratBadan , usia ;
+    double umur , beratAsal;
+    double masa , umurAsal;
+    double beratTujuan , umurTujuan ;
     char s[100] ,s1[100];
 
     fp1 = fopen("gravitasi planet.txt","r");
@@ -35,7 +35,7 @@ int main(){
     printf("Kamu ingin tinggal di planet apa ?\n>>");
     scanf("%s",s1);
     printf("Berapa berat badanmu ?\n>>");
-    scanf("%lf",&beratbadan);
+    scanf("%lf",&beratAsal);
     printf("Berapa umur mu sekarang ?\n>>");
     scanf("%lf",&umur);
     p = strlen(s);
@@ -45,20 +45,23 @@ int main(){
             s[i]+= 32 ;
         }
     }
-    while(fscanf(fp1,"%s %lf",g[0].planet,&g[0].percepatan)!=EOF){
-        if(strcmp(g[0].planet,s)==0){
+    while(!feof(fp1)){
+        fscanf(fp1,"%s %lf",g[0].planet,&g[0].percepatan);
+         if(strcmp(g[0].planet,s)==0){
             break ;
         }
     }
-    while(fscanf(fp2,"%s %lf",r[0].planet,&r[0].waktu)!=EOF){
+  
+   while(!feof(fp2)){
+        fscanf(fp2,"%s %lf",r[0].planet,&r[0].waktu);
         if(strcmp(r[0].planet,s)==0){
             break ;
         }
-    }
-   
-    umur1 = umur /r[0].waktu;
-    masa = beratbadan /g[0].percepatan; 
-    printf("%lf ",masa);
+   }
+ 
+    umurAsal = umur /r[0].waktu;
+    masa = beratAsal /g[0].percepatan; 
+  
 
     while(fscanf(fp1,"%s %lf",g[1].planet,&g[1].percepatan)!=EOF){
         if(strcmp(g[1].planet,s1)==0){
@@ -70,12 +73,13 @@ int main(){
             break ;
         }
     }
-    beratBadan = masa* g[1].percepatan; 
-    usia = umur1 * r[1].waktu  ;
+    beratTujuan = masa* g[1].percepatan; 
+    umurTujuan = umurAsal * r[1].waktu  ;
 
     printf("berikut ini adalah data perolehan apabila kamu ingin tinggal di %s\n",s1);
-    printf("usia mu sekarang akan berubah menjadi %lf\n",usia);
-    printf("beratmu akan menjadi %lf\n",beratBadan);
+    printf("usia mu sekarang akan berubah menjadi %lf Tahun.\n",umurTujuan);
+    printf("beratmu akan menjadi %lf Joule.\n",beratTujuan);
+    fclose(fp1), fclose(fp2);
    
 
 }
