@@ -14,7 +14,7 @@ int main(){
     FILE *fp1 ; 
     FILE *fp2 ; 
  
-    int stat1 =0, stat2=0,stats , i, p;
+    int stat1 =0, stat2=0,stats , i, p ,p1;
     double umur , beratAsal;
     double masa , umurAsal;
     double beratTujuan , umurTujuan ;
@@ -39,12 +39,19 @@ int main(){
     printf("Berapa umur mu sekarang ?\n>>");
     scanf("%lf",&umur);
     p = strlen(s);
+    p1 =strlen(s1);
 
     for(i=0 ; i < p ;i++){
         if(s[i]>= 65 && s[i]<= 90){
             s[i]+= 32 ;
         }
     }
+    for(i=0 ; i < p1 ;i++){
+        if(s1[i]>= 65 && s1[i]<= 90){
+            s1[i]+= 32 ;
+        }
+    }
+
     while(!feof(fp1)){
         fscanf(fp1,"%s %lf",g[0].planet,&g[0].percepatan);
          if(strcmp(g[0].planet,s)==0){
