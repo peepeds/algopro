@@ -17,4 +17,5 @@ Application for Restaurants
 ----
 Disclaimer : 
 
-- This code only available for windows OS , MAC OS & LINUX OS cann't run  becaue conrtains not standard library,
+- This code only available for windows OS , MAC OS & LINUX OS cann't run  because  include  not standard library,
+- windows.h & conio.h is not a standard library 
