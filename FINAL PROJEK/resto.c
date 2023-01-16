@@ -139,7 +139,7 @@ void chinese(){ //daftar menu chinese
 
 void japanese(){ // daftar menu japanese
 
-    char nama[5][16] = {"Onigiri","Udon", "Yakisoba", "Sushi", "Raw Tuna"};
+    char nama[5][16] = {"Onigiri","Udon", "Yakisoba", "Sushi", "Raw-Tuna"};
     int harga[5] = {20000, 25000, 30000, 40000, 50000};
     food(jmlh_menu, nama, harga, 2);
 
