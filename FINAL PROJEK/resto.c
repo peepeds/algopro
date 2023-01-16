@@ -1256,7 +1256,7 @@ void pembayaran(){ CLR;
     fp=fopen(order_user,"w");
     fclose(fp);
     gotoxy(0,0);
-    getch(); lobby();
+    getch();hide(hides);lobby();
 
 }
 
