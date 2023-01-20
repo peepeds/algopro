@@ -1,14 +1,14 @@
 /* Restaurant Management System for Final Project */
 
-#include<ctype.h>
-#include<conio.h>
-#include<stdio.h>
-#include<string.h>
-#include<stdbool.h>
-#include<stdlib.h>
-#include<time.h>
-#include<unistd.h>
-#include<windows.h>
+#include<ctype.h> // upper & lowwer
+#include<conio.h> // control interface , getch()
+#include<stdio.h> // input & output
+#include<string.h> //  manipulasi string manipulation
+#include<stdbool.h> // bool , true / false
+#include<stdlib.h> //  operation controls , cls , atoi , dll
+#include<time.h> // waktu
+#include<unistd.h> // API ke POSIX , sleep , dll
+#include<windows.h> // API ke windows , gotoxy , dll 
 
 
 /* Constants */
@@ -26,11 +26,11 @@
 
 /* Global Variables */
 
-FILE *fp, *ft;
+FILE *fp, *ft; // pointers 
 
 int jmlh_menu = 5;
 
-bool hides = FALSE;
+bool hides = FALSE; // set 
 
 char data_user[100], order_user[100];
 
@@ -1352,6 +1352,6 @@ void shp_cart(bool lizt){ CLR;
 int main(){
     
     hide(hides);
-    intro();
+    intro(); // biar ke fungsi awal 
 
 }
